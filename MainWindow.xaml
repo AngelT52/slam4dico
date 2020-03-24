@@ -1,0 +1,45 @@
+﻿<Window x:Class="Slam4Dico.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Slam4Dico"
+        mc:Ignorable="d"
+        Title="Gestion des postes" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl Margin="82,59,82,59">
+            <TabItem Header="Ajout Poste">
+                <Grid Background="#FFE5E5E5">
+                    <Label Name="lbajoutnumeroposte" Content="N° Poste" HorizontalAlignment="Left" Margin="181,62,0,0" VerticalAlignment="Top"/>
+                    <TextBox Name="tbajoutnumeroposte"  HorizontalAlignment="Left" Margin="266,62,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="26"/>
+                    <Label Name="lbajoutnumerotravee" Content="N° Travée" HorizontalAlignment="Left" Margin="181,102,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Name="cbajoutnumerotavree" HorizontalAlignment="Left" Margin="266,106,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Label Name="lbajoutnumerorangee" Content="N° Rangée" HorizontalAlignment="Left" Margin="181,144,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Name="cbajoutnumerorangee" HorizontalAlignment="Left" Margin="266,148,0,0" VerticalAlignment="Top" Width="60"/>
+                    <Button Name="btnajoutajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="214,192,0,0" VerticalAlignment="Top" Height="22" Width="73" Click="btnajoutajouter_Click"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Ajout Poste Visible" Selector.Selected="ConsultationLoaded">
+                <Grid Background="#FFE5E5E5">
+                    <Label Name="lbajoutvisiblenumeroposte" Content="N° Poste" HorizontalAlignment="Left" Margin="224,62,0,0" VerticalAlignment="Top"/>
+                    <ComboBox Name="cbajoutvisiblenumeroposte" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top" Width="60" SelectionChanged="ChargementListePostes" />
+                    <Label Name="lbajoutvisibleajoutvisible" Content="Postes visibles" HorizontalAlignment="Left" Margin="105,0,0,0" VerticalAlignment="Center"/>
+                    <ListBox Name="lboxajoutvisible" Margin="200,93,200,70"  SelectedItem="{Binding SelectedSection}"  />
+                    <Button Name="btnajoutvisibleajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="260,246,0,0" VerticalAlignment="Top" Height="32" Width="85" Click="btnajoutvisibleajouter_Click"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Consultation" Selector.Selected="ConsultationLoadedConsultation">
+                <Grid Background="#FFE5E5E5">
+                    <Label Name="lbconsultationnumeroposte" Content="N° Poste" HorizontalAlignment="Left" Margin="209,70,0,0" VerticalAlignment="Top"/>
+                    <Label Name="lbconsultationpostevisibles" Content="Postes visibles" HorizontalAlignment="Left" Margin="340,70,0,0" VerticalAlignment="Top"/>
+                    <ListBox Name ="lbconsultation" Margin="209,108,158,72"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBlock HorizontalAlignment="Left" Margin="911,236,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
